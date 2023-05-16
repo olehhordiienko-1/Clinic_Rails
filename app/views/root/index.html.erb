@@ -1,0 +1,15 @@
+<div class="table">
+  <ul>
+    <li><%= link_to 'Doctors', doctors_path %></li>
+    <li><%= link_to 'Patients', patients_path %></li>
+    <li><%= link_to 'Departments', departments_path %></li>
+    <li><%= link_to 'Patient Cards', patient_cards_path %></li>
+    <li><%= link_to 'Specialization', specializations_path %></li>
+    <% if user_signed_in? %>
+      <div> Welcome <%= current_user.email %> </div>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= button_to "Sign in", new_user_session_path %>
+    <% end %>
+  </ul>
+</div>

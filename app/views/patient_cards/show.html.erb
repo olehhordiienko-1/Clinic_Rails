@@ -1,0 +1,12 @@
+<div class="table">
+  <h1>Patient Card</h1>
+
+  <p><strong>Patient:</strong> <%= Patient.find_by(id: @patient_card.patient_id).last_name %></p>
+  <p><strong>Department:</strong> <%= @patient_card.department.name %></p>
+  <p><strong>Doctor:</strong> <%= @patient_card.doctor.name %></p>
+
+  <br>
+
+  <%= link_to 'Edit', edit_patient_card_path(@patient_card) %> |
+  <%= link_to 'Back', patient_cards_path %>
+</div>

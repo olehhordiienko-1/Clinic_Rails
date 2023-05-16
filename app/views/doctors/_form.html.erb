@@ -1,0 +1,35 @@
+<div class="table">
+
+<%= form_with(model: @doctor) do |form| %>
+  <% if @doctor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doctor.errors.count, "error") %> prohibited this doctor from being saved:</h2>
+
+      <ul>
+        <% @doctor.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="table">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="table">
+    <%= form.label :department_id %>
+    <%= form.collection_select :department_id, Department.all, :id, :name, prompt: true %>
+  </div>
+
+  <div class="table">
+    <%= form.label :specialization %>
+    <%= form.text_field :specialization %>
+  </div>
+
+  <div class="table">
+    <%= form.submit 'Save', class: 'btn' %>
+  </div>
+<% end %>
+</div>

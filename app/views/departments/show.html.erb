@@ -1,0 +1,13 @@
+<div class="table">
+
+<h1>Department</h1>
+
+<p><strong>Name:</strong> <%= @department.name %></p>
+<p><strong>Address:</strong> <%= @department.address %></p>
+
+<br>
+
+<%= link_to 'Edit', edit_department_path(@department) %> |
+<%= link_to 'Back', departments_path %>
+
+</div>
